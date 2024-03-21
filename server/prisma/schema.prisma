@@ -1,0 +1,55 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["views"]
+  binaryTargets   = ["native"]
+}
+
+generator typegraphql {
+  provider            = "typegraphql-prisma"
+  output              = "./__generated__/graphql"
+  previewFeatures     = ["views"]
+  binaryTargets       = ["native"]
+  simpleResolvers     = "true"
+  formatGeneratedCode = "prettier"
+  useSimpleInputs     = "true"
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model document {
+  doc_type   String?             @db.Text
+  id         Int                 @id @default(autoincrement()) @db.UnsignedInt
+  doc_number String?             @db.Text
+  doc_status document_doc_status @default(ACTIVE)
+  userId     Int?         
+  doc_url    String?             @db.Text       
+  department department_list     @default(STUDENT)
+}
+
+model user {
+  email        String?    @unique(map: "email_unique") @db.VarChar(100)
+  id           Int        @id @default(autoincrement()) @db.UnsignedInt
+  password     String?    @db.Text
+  phone_number Int?
+  roles        String     @db.Text
+  username     String     @unique(map: "user_username_unique") @db.VarChar(100)
+}
+
+enum document_doc_status {
+  ACTIVE
+  INACTIVE
+}
+
+enum department_list {
+  STUDENT
+  CANADIAN_CITIZEN
+  HEALTH
+  TRAVELER
+  ENVIROMENTALIST
+  BUSINESSES
+  PROFESSIONAL
+}
