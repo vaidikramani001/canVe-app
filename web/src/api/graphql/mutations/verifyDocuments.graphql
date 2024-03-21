@@ -1,0 +1,3 @@
+mutation VerifyDocument($data: String!, $userId: Float!) {
+  verifyDocument(data: $data, userId: $userId)
+}

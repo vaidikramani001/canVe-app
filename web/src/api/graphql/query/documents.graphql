@@ -1,0 +1,9 @@
+query DocumentsByUserId($data:FindDocumentByUserInput!){
+  documentsByUserId(data:$data){
+    doc_type
+    doc_number
+    userId
+    doc_status
+    id
+  }
+}

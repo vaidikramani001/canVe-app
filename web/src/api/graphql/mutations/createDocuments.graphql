@@ -1,0 +1,10 @@
+mutation createDocument ($data : CreateDocumentInput!){
+  createDocument (data : $data){
+    document{
+      doc_number
+      doc_type
+      id
+      doc_status
+    }
+  }
+}
