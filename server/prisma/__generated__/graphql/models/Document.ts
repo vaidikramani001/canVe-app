@@ -50,4 +50,9 @@ export class Document {
     | "ENVIROMENTALIST"
     | "BUSINESSES"
     | "PROFESSIONAL";
+
+  @TypeGraphQL.Field((_type) => Boolean, {
+    nullable: false,
+  })
+  bookmarked!: boolean;
 }

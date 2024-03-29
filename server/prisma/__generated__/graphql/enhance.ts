@@ -304,6 +304,7 @@ const modelsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   User: ["email", "id", "password", "phone_number", "roles", "username"],
 };
@@ -353,6 +354,7 @@ const outputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
     "_count",
     "_avg",
     "_sum",
@@ -382,6 +384,7 @@ const outputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
     "_all",
   ],
   DocumentAvgAggregate: ["id", "userId"],
@@ -394,6 +397,7 @@ const outputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentMaxAggregate: [
     "doc_type",
@@ -403,6 +407,7 @@ const outputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   UserCountAggregate: [
     "email",
@@ -483,6 +488,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentOrderByWithRelationInput: [
     "doc_type",
@@ -492,6 +498,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentWhereUniqueInput: [
     "id",
@@ -504,6 +511,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentOrderByWithAggregationInput: [
     "doc_type",
@@ -513,6 +521,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
     "_count",
     "_avg",
     "_max",
@@ -530,6 +539,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   UserWhereInput: [
     "AND",
@@ -592,6 +602,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentUpdateInput: [
     "doc_type",
@@ -600,6 +611,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentCreateManyInput: [
     "doc_type",
@@ -609,6 +621,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentUpdateManyMutationInput: [
     "doc_type",
@@ -617,6 +630,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   UserCreateInput: ["email", "password", "phone_number", "roles", "username"],
   UserUpdateInput: ["email", "password", "phone_number", "roles", "username"],
@@ -652,6 +666,7 @@ const inputsInfo = {
   Enumdocument_doc_statusFilter: ["equals", "in", "notIn", "not"],
   IntNullableFilter: ["equals", "in", "notIn", "lt", "lte", "gt", "gte", "not"],
   Enumdepartment_listFilter: ["equals", "in", "notIn", "not"],
+  BoolFilter: ["equals", "not"],
   SortOrderInput: ["sort", "nulls"],
   DocumentCountOrderByAggregateInput: [
     "doc_type",
@@ -661,6 +676,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentAvgOrderByAggregateInput: ["id", "userId"],
   DocumentMaxOrderByAggregateInput: [
@@ -671,6 +687,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentMinOrderByAggregateInput: [
     "doc_type",
@@ -680,6 +697,7 @@ const inputsInfo = {
     "userId",
     "doc_url",
     "department",
+    "bookmarked",
   ],
   DocumentSumOrderByAggregateInput: ["id", "userId"],
   StringNullableWithAggregatesFilter: [
@@ -746,6 +764,7 @@ const inputsInfo = {
     "_min",
     "_max",
   ],
+  BoolWithAggregatesFilter: ["equals", "not", "_count", "_min", "_max"],
   StringFilter: [
     "equals",
     "in",
@@ -811,6 +830,7 @@ const inputsInfo = {
     "divide",
   ],
   Enumdepartment_listFieldUpdateOperationsInput: ["set"],
+  BoolFieldUpdateOperationsInput: ["set"],
   IntFieldUpdateOperationsInput: [
     "set",
     "increment",
@@ -845,6 +865,7 @@ const inputsInfo = {
     "not",
   ],
   NestedEnumdepartment_listFilter: ["equals", "in", "notIn", "not"],
+  NestedBoolFilter: ["equals", "not"],
   NestedStringNullableWithAggregatesFilter: [
     "equals",
     "in",
@@ -920,6 +941,7 @@ const inputsInfo = {
     "_min",
     "_max",
   ],
+  NestedBoolWithAggregatesFilter: ["equals", "not", "_count", "_min", "_max"],
   NestedStringFilter: [
     "equals",
     "in",

@@ -44,6 +44,7 @@ export class FindManyDocumentArgs {
         | "userId"
         | "doc_url"
         | "department"
+        | "bookmarked"
       >
     | undefined;
 }

@@ -2,6 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
+import { BoolWithAggregatesFilter } from "../inputs/BoolWithAggregatesFilter";
 import { Enumdepartment_listWithAggregatesFilter } from "../inputs/Enumdepartment_listWithAggregatesFilter";
 import { Enumdocument_doc_statusWithAggregatesFilter } from "../inputs/Enumdocument_doc_statusWithAggregatesFilter";
 import { IntNullableWithAggregatesFilter } from "../inputs/IntNullableWithAggregatesFilter";
@@ -59,4 +60,9 @@ export class DocumentScalarWhereWithAggregatesInput {
     nullable: true,
   })
   department?: Enumdepartment_listWithAggregatesFilter | undefined;
+
+  @TypeGraphQL.Field((_type) => BoolWithAggregatesFilter, {
+    nullable: true,
+  })
+  bookmarked?: BoolWithAggregatesFilter | undefined;
 }

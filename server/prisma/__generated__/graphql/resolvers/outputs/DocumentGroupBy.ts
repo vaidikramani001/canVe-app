@@ -56,6 +56,11 @@ export class DocumentGroupBy {
     | "BUSINESSES"
     | "PROFESSIONAL";
 
+  @TypeGraphQL.Field((_type) => Boolean, {
+    nullable: false,
+  })
+  bookmarked!: boolean;
+
   @TypeGraphQL.Field((_type) => DocumentCountAggregate, {
     nullable: true,
   })

@@ -44,4 +44,9 @@ export class DocumentUpdateManyMutationInput {
     | "BUSINESSES"
     | "PROFESSIONAL"
     | undefined;
+
+  @TypeGraphQL.Field((_type) => Boolean, {
+    nullable: true,
+  })
+  bookmarked?: boolean | undefined;
 }

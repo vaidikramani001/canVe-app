@@ -2,6 +2,7 @@ import * as TypeGraphQL from "type-graphql";
 import * as GraphQLScalars from "graphql-scalars";
 import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
+import { BoolFilter } from "../inputs/BoolFilter";
 import { DocumentWhereInput } from "../inputs/DocumentWhereInput";
 import { Enumdepartment_listFilter } from "../inputs/Enumdepartment_listFilter";
 import { Enumdocument_doc_statusFilter } from "../inputs/Enumdocument_doc_statusFilter";
@@ -59,4 +60,9 @@ export class DocumentWhereUniqueInput {
     nullable: true,
   })
   department?: Enumdepartment_listFilter | undefined;
+
+  @TypeGraphQL.Field((_type) => BoolFilter, {
+    nullable: true,
+  })
+  bookmarked?: BoolFilter | undefined;
 }

@@ -28,6 +28,7 @@ export class GroupByDocumentArgs {
     | "userId"
     | "doc_url"
     | "department"
+    | "bookmarked"
   >;
 
   @TypeGraphQL.Field((_type) => DocumentScalarWhereWithAggregatesInput, {

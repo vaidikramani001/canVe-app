@@ -44,6 +44,7 @@ export class FindFirstDocumentArgs {
         | "userId"
         | "doc_url"
         | "department"
+        | "bookmarked"
       >
     | undefined;
 }

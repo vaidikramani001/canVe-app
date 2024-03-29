@@ -59,6 +59,9 @@ class Document {
 
   @Field()
   department: string;
+
+  @Field()
+  bookmarked: boolean;
 }
 
 @ObjectType()
@@ -161,6 +164,43 @@ export class DocumentResolver {
     } catch (error) {
       console.error("Error verifying document:", error);
       return "Failed to verify document";
+    }
+  }
+
+  // toggle bookmarked
+
+  @Mutation(() => Document, { nullable: true })
+  async toggleBookmark(
+    @Arg("documentId") documentId: number,
+    @Ctx() {}: MyContext
+  ): Promise<Document | null> {
+    try {
+      // Find the document by ID
+      const document = await prisma.document.findUnique({
+        where: {
+          id: documentId,
+        },
+      });
+
+      if (!document) {
+        console.error("Document not found");
+        return null;
+      }
+
+      // Toggle the bookmarked field
+      const updatedDocument = await prisma.document.update({
+        where: {
+          id: documentId,
+        },
+        data: {
+          bookmarked: !document.bookmarked, // Toggle the value
+        },
+      });
+
+      return updatedDocument;
+    } catch (error) {
+      console.error("Error toggling bookmark:", error);
+      return null;
     }
   }
   

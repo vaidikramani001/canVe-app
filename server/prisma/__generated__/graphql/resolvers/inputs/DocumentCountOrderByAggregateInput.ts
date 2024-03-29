@@ -40,4 +40,9 @@ export class DocumentCountOrderByAggregateInput {
     nullable: true,
   })
   department?: "asc" | "desc" | undefined;
+
+  @TypeGraphQL.Field((_type) => SortOrder, {
+    nullable: true,
+  })
+  bookmarked?: "asc" | "desc" | undefined;
 }

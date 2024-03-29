@@ -8,6 +8,7 @@ export enum DocumentScalarFieldEnum {
   userId = "userId",
   doc_url = "doc_url",
   department = "department",
+  bookmarked = "bookmarked",
 }
 TypeGraphQL.registerEnumType(DocumentScalarFieldEnum, {
   name: "DocumentScalarFieldEnum",

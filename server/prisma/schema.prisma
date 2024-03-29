@@ -28,6 +28,7 @@ model document {
   userId     Int?         
   doc_url    String?             @db.Text       
   department department_list     @default(STUDENT)
+  bookmarked  Boolean           @default(false)
 }
 
 model user {

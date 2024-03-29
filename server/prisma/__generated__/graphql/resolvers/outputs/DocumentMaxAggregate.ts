@@ -51,4 +51,9 @@ export class DocumentMaxAggregate {
     | "BUSINESSES"
     | "PROFESSIONAL"
     | null;
+
+  @TypeGraphQL.Field((_type) => Boolean, {
+    nullable: true,
+  })
+  bookmarked!: boolean | null;
 }

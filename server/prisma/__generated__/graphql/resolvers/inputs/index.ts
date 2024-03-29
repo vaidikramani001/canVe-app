@@ -1,3 +1,6 @@
+export { BoolFieldUpdateOperationsInput } from "./BoolFieldUpdateOperationsInput";
+export { BoolFilter } from "./BoolFilter";
+export { BoolWithAggregatesFilter } from "./BoolWithAggregatesFilter";
 export { DocumentAvgOrderByAggregateInput } from "./DocumentAvgOrderByAggregateInput";
 export { DocumentCountOrderByAggregateInput } from "./DocumentCountOrderByAggregateInput";
 export { DocumentCreateInput } from "./DocumentCreateInput";
@@ -23,6 +26,8 @@ export { IntFilter } from "./IntFilter";
 export { IntNullableFilter } from "./IntNullableFilter";
 export { IntNullableWithAggregatesFilter } from "./IntNullableWithAggregatesFilter";
 export { IntWithAggregatesFilter } from "./IntWithAggregatesFilter";
+export { NestedBoolFilter } from "./NestedBoolFilter";
+export { NestedBoolWithAggregatesFilter } from "./NestedBoolWithAggregatesFilter";
 export { NestedEnumdepartment_listFilter } from "./NestedEnumdepartment_listFilter";
 export { NestedEnumdepartment_listWithAggregatesFilter } from "./NestedEnumdepartment_listWithAggregatesFilter";
 export { NestedEnumdocument_doc_statusFilter } from "./NestedEnumdocument_doc_statusFilter";

@@ -100,6 +100,11 @@ const Sidebar = (props) => {
                                         Download Documents
                                     </h1>
                                 </a>
+                                <a href="/bookmark">
+                                    <h1 className="cursor-pointer p-2 hover:bg-blue-600 rounded-md mt-1">
+                                        BookMarked
+                                    </h1>
+                                </a>
                             </div>
                             :
                             <></>

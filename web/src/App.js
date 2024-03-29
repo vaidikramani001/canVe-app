@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom/dist';
 import MyDocs from './pages/mydocs';
 import AddDoc from './pages/addDoc';
 import DownloadDocs from './pages/downloadDocs';
+import BookMarkedDocs from './pages/bookMark';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="mydocs" element={<MyDocs />} />
           <Route path="add-doc" element={<AddDoc />} />
           <Route path="download-doc" element={<DownloadDocs />} />
+          <Route path="bookmark" element={<BookMarkedDocs />} />
           <Route path='register' element={<Register />} />
           <Route path="reset-password" element={<ResetPassword />} />
         </Routes>
