@@ -23,45 +23,31 @@ const UserDetail = (props) => {
             data: { email: decode.username },
         },
     });
-    
+
     const user = data?.user;
-    console.log(user,"data")
 
     return (
         <React.Fragment>
-            <div>
-                <div>
-                    <div
-                        class="relative flex w-full max-w-[26rem] flex-col rounded-xl bg-transparent bg-clip-border text-gray-700 shadow-none">
-                        <div
-                            class="relative flex items-center gap-4 pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent shadow-none rounded-xl bg-clip-border">
+            <div className="flex justify-end">
+                <div className="p-2 m-2 rounded-lg shadow-lg text-black">
+                    <div className="flex flex-col gap-4">
+                        <div className="relative flex items-center gap-4 overflow-hidden">
                             <img
                                 src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1480&amp;q=80"
                                 alt="Tania Andrew"
-                                class="relative inline-block h-[58px] w-[58px] !rounded-full  object-cover object-center" />
-                            <div class="flex w-full flex-col gap-0.5">
-                                <div class="flex items-center justify-between">
-                                    <h5
-                                        class="block font-sans text-xl antialiased font-semibold leading-snug tracking-normal text-blue-gray-900">
-                                        {user?.username}
-                                    </h5>
-                                </div>
-                                <p class="block font-sans text-base antialiased font-light leading-relaxed text-blue-gray-900">
-                                    {user?.email}
-                                </p>
+                                className="inline-block h-12 w-12 rounded-full border-4 border-white"
+                            />
+                            <div className="flex flex-col justify-center">
+                                <h5 className="text-lg font-bold  ">{user?.username}</h5>
+                                <p className="text-md font-light  ">{user?.email}</p>
                             </div>
                         </div>
-                        {/* <div class="p-0 mb-6">
-                            <p class="block font-sans text-base antialiased font-light leading-relaxed text-inherit">
-                                "I found solution to all my design needs from Creative Tim. I use
-                                them as a freelancer in my hobby projects for fun! And its really
-                                affordable, very humble guys !!!"
-                            </p>
-                        </div> */}
+
                     </div>
                 </div>
             </div>
         </React.Fragment>
+
     )
 };
 
