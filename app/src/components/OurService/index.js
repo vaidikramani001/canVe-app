@@ -50,17 +50,18 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white', // Change if needed
+        backgroundColor: 'white', 
     },
     titleContainer: {
-        marginTop: 20,
+        marginTop: 60,
         alignItems: 'center',
-        marginBottom: 20,
-    },
-    title: {
-        fontSize: 24,
+        marginBottom: 40,
+      },
+      title: {
+        fontSize: 32,
         fontWeight: 'bold',
-    },
+        color: '#1F2937',
+      },
     sectionContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 10,
         borderRadius: 10,
-        backgroundColor: '#007bff',
+        backgroundColor: '#00A08B',
         marginHorizontal: 5,
         shadowColor: 'black',
         shadowOpacity: 0.3,

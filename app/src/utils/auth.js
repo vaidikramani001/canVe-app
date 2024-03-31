@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import base64 from 'base64-js';
-// Function to set authentication token and user ID in AsyncStorage
+
 export const setAuthToken = async (token) => {
   try {
     await AsyncStorage.setItem('authToken', token);
@@ -9,7 +9,6 @@ export const setAuthToken = async (token) => {
   }
 };
 
-// Function to get authentication token from AsyncStorage
 export const getAuthToken = async () => {
   try {
     return await AsyncStorage.getItem('authToken');
@@ -19,7 +18,6 @@ export const getAuthToken = async () => {
   }
 };
 
-// Function to get user ID from AsyncStorage
 export const getUserId = async () => {
   try {
     const userToken = await AsyncStorage.getItem('authToken');

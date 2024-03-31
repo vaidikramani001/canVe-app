@@ -28,7 +28,7 @@ const BookMarkedDocs = (props) => {
         },
     });
     const docs = data?.documentsByUserId;
-
+console.log(data , "dTs");
     async function downloadImage(URL, Name) {
         try {
             const imageUrl = URL;

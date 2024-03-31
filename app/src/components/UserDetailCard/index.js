@@ -1,7 +1,9 @@
 import { gql, useQuery } from "@apollo/client";
 import React, { useEffect, useState } from "react";
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { getUserId } from "../../utils/auth";
+import { Touchable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 
 const userBymail = gql`
@@ -17,6 +19,8 @@ const userBymail = gql`
 
 
 const UserDetail = () => {
+  const navigation = useNavigation();
+
 const [User , setUser] = useState()
      const handleToken = async () => {
     
@@ -34,75 +38,72 @@ const [User , setUser] = useState()
         },
     });
     const user = data?.user;
-    return (
-        <View style={styles.container}>
-            <View style={styles.userInfo}>
-                <Image
-                    source={{ uri: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80' }}
-                    style={styles.userImage}
-                    resizeMode="cover"
-                />
-                <View style={styles.userInfoText}>
-                    <Text style={styles.username}>{user?.username}</Text>
-                    <Text style={styles.email}>{user?.email}</Text>
-                </View>
-            </View>
-            {/* <View style={styles.testimonial}>
-                <Text style={styles.testimonialText}>
-                    "I found solution to all my design needs from Creative Tim. I use
-                    them as a freelancer in my hobby projects for fun! And its really
-                    affordable, very humble guys !!!"
-                </Text>
-            </View> */}
-        </View>
-    );
-};
-
-const styles = StyleSheet.create({
-    container: {
-        width: '100%',
-        alignItems: 'center',
-        marginTop: 20,
-    },
-    userInfo: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        paddingVertical: 8,
-        paddingHorizontal: 16,
-        borderRadius: 10,
-        backgroundColor: '#fff',
-        shadowColor: '#000',
-        shadowOpacity: 0.2,
-        shadowRadius: 4,
-        elevation: 3,
-    },
-    userImage: {
-        width: 58,
-        height: 58,
-        borderRadius: 29,
-    },
-    userInfoText: {
-        marginLeft: 12,
-    },
-    username: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#333',
-    },
-    email: {
-        fontSize: 16,
-        fontWeight: '300',
-        color: '#333',
-    },
-    testimonial: {
-        padding: 16,
-    },
-    testimonialText: {
-        fontSize: 16,
-        fontWeight: '300',
-        color: '#333',
-    },
-});
-
-
-export default UserDetail;
+     {/* <Text style={styles.username}>{user?.username}</Text>
+                    <Text style={styles.email}>{user?.email}</Text> */}
+                    return (
+                      <View style={styles.userInfo}>
+                        <View style={styles.userInfoText}>
+                          <Text style={styles.username}>Welcome to Canve Mr.{user?.username}</Text>
+                          <Text style={styles.email}>{user?.email}</Text>
+                          <TouchableOpacity style={styles.logoutButton} onPress={() => navigation.navigate('LoginScreen')}>
+                            <Text style={styles.logoutText}>Log Out</Text>
+                          </TouchableOpacity>
+                        </View>
+                      </View>
+                    );
+                    };
+                    
+                    const styles = StyleSheet.create({
+                      userInfo: {
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        paddingVertical: 12,
+                        paddingHorizontal: 16,
+                        backgroundColor: '#fff',
+                        borderRadius: 12,
+                        shadowColor: '#000',
+                        shadowOpacity: 0.12,
+                        shadowRadius: 8,
+                        elevation: 4,
+                        justifyContent: 'space-between',
+                        position: 'relative', 
+                      },
+                      userInfoText: {
+                        flex: 1,
+                        justifyContent: 'space-between',
+                      },
+                      userImage: {
+                        width: 64,
+                        height: 64,
+                        borderRadius: 32,
+                        marginRight: 16,
+                      },
+                      username: {
+                        fontSize: 20,
+                        fontWeight: 'bold',
+                        color: '#333',
+                        marginBottom: 4,
+                      },
+                      email: {
+                        fontSize: 16,
+                        fontWeight: '400',
+                        color: '#666',
+                        marginBottom: 12,
+                      },
+                      logoutButton: {
+                        backgroundColor: '#f04',
+                        paddingVertical: 4,
+                        paddingHorizontal: 10,
+                        borderRadius: 4,
+                        position: 'absolute', 
+                        right: 16, 
+                        top: 12, 
+                      },
+                      logoutText: {
+                        color: '#fff',
+                        fontWeight: 'bold',
+                      },
+                    });
+                    
+                    
+                    export default UserDetail;

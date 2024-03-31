@@ -12,4 +12,5 @@ const HomeHeroSection = () => {
     );
 }
 
+
 export default HomeHeroSection;
