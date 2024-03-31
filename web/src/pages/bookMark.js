@@ -3,6 +3,7 @@ import Sidebar from "../components/sidebar";
 import { getAuthToken } from "../utils/auth";
 import { jwtDecode } from "jwt-decode";
 import { gql, useQuery } from "@apollo/client";
+import Header from "../components/header";
 
 const DocumentsByUserId = gql`
   query DocumentsByUserId($data:FindDocumentByUserInput!){
@@ -55,14 +56,15 @@ const BookMarkedDocs = (props) => {
     return (
         <React.Fragment>
             <Sidebar />
+            <Header />
             <div style={{ marginLeft: '350px', width: '70%' }}>
                 <div>
-                    <div className="text-center py-12">
+                    <div className="text-center py-12 bg-gray-200 rounded">
                         <h1 className="text-4xl font-bold text-gray-900">Your Bookmarked Documents</h1>
                     </div>
                 </div>
                 {docs && docs.length > 0 && docs.filter(i => i.bookmarked === true).length > 0 ? (
-                    <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8  ">
+                    <ul className="grid grid-cols-1 xl:grid-cols-3 gap-y-10 gap-x-6 items-start p-8  bg-gray-200 rounded mt-8 ">
                         {docs?.filter(i => i.bookmarked === true).map((i) => {
                             return (
                                 <li className="relative flex flex-col sm:flex-row xl:flex-col items-start bg-gray-100 p-6 rounded-lg">
@@ -121,8 +123,8 @@ const BookMarkedDocs = (props) => {
                         }
                     </ul>
                 ) : (
-                    <div className="text-center py-12">
-                        <p className="text-xl text-gray-700">No bookmarks found.</p>
+                    <div className="text-center bg-gray-200 mt-4 rounded p-3  ">
+                        <p className="text-xl text-gray-700">No bookmarks found</p>
                     </div>
                 )}
             </div>

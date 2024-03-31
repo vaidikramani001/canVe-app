@@ -4,6 +4,7 @@ import { jwtDecode } from "jwt-decode";
 import Sidebar from "../components/sidebar";
 import { gql, useMutation, useQuery } from "@apollo/client";
 import doc from "../images/doc.png"
+import Header from "../components/header";
 
 const DocumentsByUserId = gql`
   query DocumentsByUserId($data:FindDocumentByUserInput!){
@@ -56,20 +57,21 @@ const MyDocs = (props) => {
     return (
         <React.Fragment>
             <Sidebar />
+            <Header />
             <div style={{ marginLeft: '350px', width: '70%' }}>
                 <div >
-                    <div className="text-center py-12 ">
-                        <h1 className="text-4xl font-bold text-gray-600">Your Documents Anytime, Anywhere</h1>
-                        <p className="mt-4 text-lg text-gray-700">Explore our collection of documents to find what you need.</p>
+                    <div className="text-center py-12  bg-gray-200 rounded ">
+                        <h1 className="text-4xl font-bold  ">Your Documents Anytime, Anywhere</h1>
+                        <p className="mt-4 text-lg  ">Explore our collection of documents to find what you need.</p>
                     </div>
                 </div>
                 {
                     docs && docs.length === 0 ? (
-                        <p className="justify-between border text-center shadow-lg">Documents not Found!</p>
+                        <p className="justify-between text-center shadow-lg bg-gray-200 rounded p-3   mt-3 text-black" >Documents not Found!</p>
                     ) : (
                         docs?.map((i) => (
                             <ul key={i.doc_number}>
-                                <li className="flex justify-between gap-x-6 py-5 mt-5 border-b-4 border-blue-600 rounded  ">
+                                <li className="flex justify-between gap-x-6 py-5 mt-5 border-b-4 border-black rounded-lg  bg-gray-200 p-3  ">
                                     <div className="flex min-w-0 gap-x-4   ">
                                         <div onClick={() => { bookmarking(i.id) }}>
                                             {
@@ -85,8 +87,8 @@ const MyDocs = (props) => {
                                         </div>
                                         <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={doc} alt="" />
                                         <div className="min-w-0 flex-auto">
-                                            <p className="text-sm font-semibold leading-6 text-gray-900">{i.doc_type}</p>
-                                            <p className="mt-1 truncate text-xs leading-5 text-gray-500">Document Number : {i.doc_number}</p>
+                                            <p className="text-sm font-semibold leading-6 font-bold">{i.doc_type}</p>
+                                            <p className="mt-1 truncate text-xs leading-5  text-black">Document Number : {i.doc_number}</p>
                                         </div>
                                     </div>
                                     <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end  ">
@@ -95,7 +97,7 @@ const MyDocs = (props) => {
                                             <div class="flex-none rounded-full bg-emerald-500/20 p-1">
                                                 <div class="h-1.5 w-1.5 rounded-full bg-emerald-500"></div>
                                             </div>
-                                            <p class="text-xs leading-5 text-gray-500">{i.doc_status}</p>
+                                            <p class="text-xs leading-5 text-green-800 font-bold">{i.doc_status}</p>
                                         </div>
                                     </div>
                                 </li>

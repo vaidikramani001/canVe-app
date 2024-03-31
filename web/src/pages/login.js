@@ -56,13 +56,13 @@ const Login = () => {
         const token = data.login.accessToken;
         const userId = data.login.userId; // Assuming the user ID is returned by the login mutation
         setAuthToken(token, userId);
-        navigate('/home'); 
+        navigate('/home');
       } else {
-        setIsError(true) 
+        setIsError(true)
         setErrorMessage(data.login.errors[0].message)
       }
     } catch (error) {
-      setIsError(true); 
+      setIsError(true);
       console.error('Error logging in:', error);
     }
   };
@@ -70,9 +70,9 @@ const Login = () => {
 
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div className="flex justify-center items-center h-screen ">
+
+      <div className="  shadow-md rounded px-8 pt-6 pb-8 mb-4 bg-gray-100">
         <h2 className="text-xl mb-4">{errorMessage} </h2>
         <div className="mb-4">
           <input
@@ -111,7 +111,7 @@ const Login = () => {
             value={'Log in'}
           />
         </div>
-        <ToastContainer/>
+        <ToastContainer />
       </div>
     </div>
   );

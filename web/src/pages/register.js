@@ -20,7 +20,7 @@ const RegisterMutation = gql`
 
 const Register = () => {
   const [username, setUsername] = useState('');
-  const[email , setEmail] = useState('')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('');
   const [isError, setIsError] = useState(false);
   const navigate = useNavigate();
@@ -37,10 +37,10 @@ const Register = () => {
           },
         },
       });
-      
+
       if (data.register.errors) {
         // Handle errors if any
-        setIsError(true); 
+        setIsError(true);
         console.error('Registration failed:', data.register.errors);
       } else {
         // Registration successful 
@@ -54,50 +54,50 @@ const Register = () => {
   ;
 
   return (
-    <div className="flex justify-center items-center h-screen"> 
-    <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
-      <div className="text-center text-xl font-bold mb-4">
-        {isError ? 'Registration Failed!' : 'Register'}
-      </div>
-      <div className="mb-4">
-        <input
-          value={username}
-          placeholder="Enter your username"
-          onChange={(ev) => setUsername(ev.target.value)}
-          className="w-full border rounded px-4 py-2"
-        />
-      </div>
-      <div className="mb-4">
-        <input
-          value={email}
-          placeholder="Enter your Email"
-          onChange={(ev) => setEmail(ev.target.value)}
-          className="w-full border rounded px-4 py-2"
-          type="email"
-        />
-      </div>
-      <div className="mb-4">
-        <input
-          value={password}
-          placeholder="Enter your password"
-          onChange={(ev) => setPassword(ev.target.value)}
-          className="w-full border rounded px-4 py-2"
-          type="password"
-        />
-      </div>
-      <div className="text-center mb-4 text-blue-500 hover:text-blue-800">
-        <a href="/">Already have an account?</a>
-      </div>
-      <div className="text-center">
-        <button
-          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
-          onClick={handleRegister}
-        >
-          Register
-        </button>
+    <div className="flex justify-center items-center h-screen">
+      <div className="bg-gray-100 p-8 rounded-lg shadow-lg">
+        <div className="text-center text-xl font-bold mb-4">
+          {isError ? 'Registration Failed!' : 'Register'}
+        </div>
+        <div className="mb-4">
+          <input
+            value={username}
+            placeholder="Enter your username"
+            onChange={(ev) => setUsername(ev.target.value)}
+            className="w-full border rounded px-4 py-2"
+          />
+        </div>
+        <div className="mb-4">
+          <input
+            value={email}
+            placeholder="Enter your Email"
+            onChange={(ev) => setEmail(ev.target.value)}
+            className="w-full border rounded px-4 py-2"
+            type="email"
+          />
+        </div>
+        <div className="mb-4">
+          <input
+            value={password}
+            placeholder="Enter your password"
+            onChange={(ev) => setPassword(ev.target.value)}
+            className="w-full border rounded px-4 py-2"
+            type="password"
+          />
+        </div>
+        <div className="text-center mb-4 text-blue-500 hover:text-blue-800">
+          <a href="/">Already have an account?</a>
+        </div>
+        <div className="text-center">
+          <button
+            className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+            onClick={handleRegister}
+          >
+            Register
+          </button>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

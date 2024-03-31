@@ -10,7 +10,7 @@ import env from '../../images/env.jpg';
 const OurServices = () => {
     return (
         <React.Fragment>
-            <div className=" p-5 m-4  shadow-lg pt-4 ">
+            <div className=" p-5 m-4  shadow-lg pt-4 bg-gray-100 rounded-lg ">
                 <h2 className="text-3xl font-bold mb-4 text-gray-800  ">Our Services </h2>
                 {/* sec 1 */}
                 <div className="pt-0 pb-8 mx-0 mt-4 overflow-hidden text-gray-700 bg-transparent rounded-xl bg-clip-border grid grid-cols-3 gap-3">
