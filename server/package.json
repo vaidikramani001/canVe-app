@@ -6,8 +6,7 @@
   "scripts": {
     "watch": "tsc -w",
     "dev": "nodemon dist/src/index.js",
-    "start": "node dist/index.js",
-    "build": " npm run clean && npx tsc",
+    "start": "node dist/index.js", 
     "clean": "rm -rf dist",
     "start2": "ts-node src/index.ts",
     "dev2": "nodemon --exec ts-node src/index.ts",
