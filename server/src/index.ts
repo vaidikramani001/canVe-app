@@ -100,8 +100,6 @@ const main = async () => {
       origin: [
         "http://localhost:3000",
         "http://localhost:3001",
-        "https://localhost:3010",
-        "https://post-maker-app.vercel.app",
       ],
       credentials: true,
     })

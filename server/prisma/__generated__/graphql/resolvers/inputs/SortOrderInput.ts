@@ -7,13 +7,13 @@ import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("SortOrderInput", {})
 export class SortOrderInput {
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: false,
-  })
-  sort!: "asc" | "desc";
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: false
+        })
+    sort!: "asc" | "desc";
 
-  @TypeGraphQL.Field((_type) => NullsOrder, {
-    nullable: true,
-  })
-  nulls?: "first" | "last" | undefined;
+    @TypeGraphQL.Field(_type => NullsOrder, {
+            nullable: true
+        })
+    nulls?: "first" | "last" | undefined;
 }

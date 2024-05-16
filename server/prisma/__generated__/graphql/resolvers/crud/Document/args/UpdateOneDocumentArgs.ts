@@ -5,13 +5,13 @@ import { DocumentWhereUniqueInput } from "../../../inputs/DocumentWhereUniqueInp
 
 @TypeGraphQL.ArgsType()
 export class UpdateOneDocumentArgs {
-  @TypeGraphQL.Field((_type) => DocumentUpdateInput, {
-    nullable: false,
-  })
-  data!: DocumentUpdateInput;
+    @TypeGraphQL.Field(_type => DocumentUpdateInput, {
+            nullable: false
+        })
+    data!: DocumentUpdateInput;
 
-  @TypeGraphQL.Field((_type) => DocumentWhereUniqueInput, {
-    nullable: false,
-  })
-  where!: DocumentWhereUniqueInput;
+    @TypeGraphQL.Field(_type => DocumentWhereUniqueInput, {
+            nullable: false
+        })
+    where!: DocumentWhereUniqueInput;
 }

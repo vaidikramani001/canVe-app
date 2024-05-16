@@ -6,16 +6,8 @@ import { department_list } from "../../enums/department_list";
 
 @TypeGraphQL.InputType("Enumdepartment_listFieldUpdateOperationsInput", {})
 export class Enumdepartment_listFieldUpdateOperationsInput {
-  @TypeGraphQL.Field((_type) => department_list, {
-    nullable: true,
-  })
-  set?:
-    | "STUDENT"
-    | "CANADIAN_CITIZEN"
-    | "HEALTH"
-    | "TRAVELER"
-    | "ENVIROMENTALIST"
-    | "BUSINESSES"
-    | "PROFESSIONAL"
-    | undefined;
+    @TypeGraphQL.Field(_type => department_list, {
+            nullable: true
+        })
+    set?: "STUDENT" | "CANADIAN_CITIZEN" | "HEALTH" | "TRAVELER" | "ENVIROMENTALIST" | "BUSINESSES" | "PROFESSIONAL" | undefined;
 }

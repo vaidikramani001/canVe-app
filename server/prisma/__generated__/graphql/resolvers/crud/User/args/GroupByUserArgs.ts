@@ -7,35 +7,33 @@ import { UserScalarFieldEnum } from "../../../../enums/UserScalarFieldEnum";
 
 @TypeGraphQL.ArgsType()
 export class GroupByUserArgs {
-  @TypeGraphQL.Field((_type) => UserWhereInput, {
-    nullable: true,
-  })
-  where?: UserWhereInput | undefined;
+    @TypeGraphQL.Field(_type => UserWhereInput, {
+            nullable: true
+        })
+    where?: UserWhereInput | undefined;
 
-  @TypeGraphQL.Field((_type) => [UserOrderByWithAggregationInput], {
-    nullable: true,
-  })
-  orderBy?: UserOrderByWithAggregationInput[] | undefined;
+    @TypeGraphQL.Field(_type => [UserOrderByWithAggregationInput], {
+            nullable: true
+        })
+    orderBy?: UserOrderByWithAggregationInput[] | undefined;
 
-  @TypeGraphQL.Field((_type) => [UserScalarFieldEnum], {
-    nullable: false,
-  })
-  by!: Array<
-    "email" | "id" | "password" | "phone_number" | "roles" | "username"
-  >;
+    @TypeGraphQL.Field(_type => [UserScalarFieldEnum], {
+            nullable: false
+        })
+    by!: Array<"email" | "id" | "password" | "phone_number" | "roles" | "username">;
 
-  @TypeGraphQL.Field((_type) => UserScalarWhereWithAggregatesInput, {
-    nullable: true,
-  })
-  having?: UserScalarWhereWithAggregatesInput | undefined;
+    @TypeGraphQL.Field(_type => UserScalarWhereWithAggregatesInput, {
+            nullable: true
+        })
+    having?: UserScalarWhereWithAggregatesInput | undefined;
 
-  @TypeGraphQL.Field((_type) => TypeGraphQL.Int, {
-    nullable: true,
-  })
-  take?: number | undefined;
+    @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+            nullable: true
+        })
+    take?: number | undefined;
 
-  @TypeGraphQL.Field((_type) => TypeGraphQL.Int, {
-    nullable: true,
-  })
-  skip?: number | undefined;
+    @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+            nullable: true
+        })
+    skip?: number | undefined;
 }

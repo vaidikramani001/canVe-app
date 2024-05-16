@@ -6,18 +6,18 @@ import { DocumentWhereUniqueInput } from "../../../inputs/DocumentWhereUniqueInp
 
 @TypeGraphQL.ArgsType()
 export class UpsertOneDocumentArgs {
-  @TypeGraphQL.Field((_type) => DocumentWhereUniqueInput, {
-    nullable: false,
-  })
-  where!: DocumentWhereUniqueInput;
+    @TypeGraphQL.Field(_type => DocumentWhereUniqueInput, {
+            nullable: false
+        })
+    where!: DocumentWhereUniqueInput;
 
-  @TypeGraphQL.Field((_type) => DocumentCreateInput, {
-    nullable: false,
-  })
-  create!: DocumentCreateInput;
+    @TypeGraphQL.Field(_type => DocumentCreateInput, {
+            nullable: false
+        })
+    create!: DocumentCreateInput;
 
-  @TypeGraphQL.Field((_type) => DocumentUpdateInput, {
-    nullable: false,
-  })
-  update!: DocumentUpdateInput;
+    @TypeGraphQL.Field(_type => DocumentUpdateInput, {
+            nullable: false
+        })
+    update!: DocumentUpdateInput;
 }

@@ -12,58 +12,58 @@ import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("UserOrderByWithAggregationInput", {})
 export class UserOrderByWithAggregationInput {
-  @TypeGraphQL.Field((_type) => SortOrderInput, {
-    nullable: true,
-  })
-  email?: SortOrderInput | undefined;
+    @TypeGraphQL.Field(_type => SortOrderInput, {
+            nullable: true
+        })
+    email?: SortOrderInput | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  id?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    id?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrderInput, {
-    nullable: true,
-  })
-  password?: SortOrderInput | undefined;
+    @TypeGraphQL.Field(_type => SortOrderInput, {
+            nullable: true
+        })
+    password?: SortOrderInput | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrderInput, {
-    nullable: true,
-  })
-  phone_number?: SortOrderInput | undefined;
+    @TypeGraphQL.Field(_type => SortOrderInput, {
+            nullable: true
+        })
+    phone_number?: SortOrderInput | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  roles?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    roles?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  username?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    username?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => UserCountOrderByAggregateInput, {
-    nullable: true,
-  })
-  _count?: UserCountOrderByAggregateInput | undefined;
+    @TypeGraphQL.Field(_type => UserCountOrderByAggregateInput, {
+            nullable: true
+        })
+    _count?: UserCountOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field((_type) => UserAvgOrderByAggregateInput, {
-    nullable: true,
-  })
-  _avg?: UserAvgOrderByAggregateInput | undefined;
+    @TypeGraphQL.Field(_type => UserAvgOrderByAggregateInput, {
+            nullable: true
+        })
+    _avg?: UserAvgOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field((_type) => UserMaxOrderByAggregateInput, {
-    nullable: true,
-  })
-  _max?: UserMaxOrderByAggregateInput | undefined;
+    @TypeGraphQL.Field(_type => UserMaxOrderByAggregateInput, {
+            nullable: true
+        })
+    _max?: UserMaxOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field((_type) => UserMinOrderByAggregateInput, {
-    nullable: true,
-  })
-  _min?: UserMinOrderByAggregateInput | undefined;
+    @TypeGraphQL.Field(_type => UserMinOrderByAggregateInput, {
+            nullable: true
+        })
+    _min?: UserMinOrderByAggregateInput | undefined;
 
-  @TypeGraphQL.Field((_type) => UserSumOrderByAggregateInput, {
-    nullable: true,
-  })
-  _sum?: UserSumOrderByAggregateInput | undefined;
+    @TypeGraphQL.Field(_type => UserSumOrderByAggregateInput, {
+            nullable: true
+        })
+    _sum?: UserSumOrderByAggregateInput | undefined;
 }

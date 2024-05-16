@@ -8,41 +8,38 @@ import { document_doc_status } from "../../enums/document_doc_status";
 
 @TypeGraphQL.InputType("NestedEnumdocument_doc_statusWithAggregatesFilter", {})
 export class NestedEnumdocument_doc_statusWithAggregatesFilter {
-  @TypeGraphQL.Field((_type) => document_doc_status, {
-    nullable: true,
-  })
-  equals?: "ACTIVE" | "INACTIVE" | undefined;
+    @TypeGraphQL.Field(_type => document_doc_status, {
+            nullable: true
+        })
+    equals?: "ACTIVE" | "INACTIVE" | undefined;
 
-  @TypeGraphQL.Field((_type) => [document_doc_status], {
-    nullable: true,
-  })
-  in?: Array<"ACTIVE" | "INACTIVE"> | undefined;
+    @TypeGraphQL.Field(_type => [document_doc_status], {
+            nullable: true
+        })
+    in?: Array<"ACTIVE" | "INACTIVE"> | undefined;
 
-  @TypeGraphQL.Field((_type) => [document_doc_status], {
-    nullable: true,
-  })
-  notIn?: Array<"ACTIVE" | "INACTIVE"> | undefined;
+    @TypeGraphQL.Field(_type => [document_doc_status], {
+            nullable: true
+        })
+    notIn?: Array<"ACTIVE" | "INACTIVE"> | undefined;
 
-  @TypeGraphQL.Field(
-    (_type) => NestedEnumdocument_doc_statusWithAggregatesFilter,
-    {
-      nullable: true,
-    },
-  )
-  not?: NestedEnumdocument_doc_statusWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => NestedEnumdocument_doc_statusWithAggregatesFilter, {
+            nullable: true
+        })
+    not?: NestedEnumdocument_doc_statusWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => NestedIntFilter, {
-    nullable: true,
-  })
-  _count?: NestedIntFilter | undefined;
+    @TypeGraphQL.Field(_type => NestedIntFilter, {
+            nullable: true
+        })
+    _count?: NestedIntFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => NestedEnumdocument_doc_statusFilter, {
-    nullable: true,
-  })
-  _min?: NestedEnumdocument_doc_statusFilter | undefined;
+    @TypeGraphQL.Field(_type => NestedEnumdocument_doc_statusFilter, {
+            nullable: true
+        })
+    _min?: NestedEnumdocument_doc_statusFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => NestedEnumdocument_doc_statusFilter, {
-    nullable: true,
-  })
-  _max?: NestedEnumdocument_doc_statusFilter | undefined;
+    @TypeGraphQL.Field(_type => NestedEnumdocument_doc_statusFilter, {
+            nullable: true
+        })
+    _max?: NestedEnumdocument_doc_statusFilter | undefined;
 }

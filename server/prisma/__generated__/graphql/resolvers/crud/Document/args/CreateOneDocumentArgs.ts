@@ -4,8 +4,8 @@ import { DocumentCreateInput } from "../../../inputs/DocumentCreateInput";
 
 @TypeGraphQL.ArgsType()
 export class CreateOneDocumentArgs {
-  @TypeGraphQL.Field((_type) => DocumentCreateInput, {
-    nullable: true,
-  })
-  data?: DocumentCreateInput | undefined;
+    @TypeGraphQL.Field(_type => DocumentCreateInput, {
+            nullable: true
+        })
+    data?: DocumentCreateInput | undefined;
 }

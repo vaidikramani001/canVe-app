@@ -4,11 +4,11 @@ import { Prisma } from "@prisma/client";
 import { DecimalJSScalar } from "../../scalars";
 
 @TypeGraphQL.ObjectType("AffectedRowsOutput", {
-  simpleResolvers: true,
-})
+        simpleResolvers: true
+    })
 export class AffectedRowsOutput {
-  @TypeGraphQL.Field((_type) => TypeGraphQL.Int, {
-    nullable: false,
-  })
-  count!: number;
+    @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+            nullable: false
+        })
+    count!: number;
 }

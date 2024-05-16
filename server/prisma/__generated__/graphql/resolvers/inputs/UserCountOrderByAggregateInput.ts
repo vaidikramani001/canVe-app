@@ -6,33 +6,33 @@ import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("UserCountOrderByAggregateInput", {})
 export class UserCountOrderByAggregateInput {
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  email?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    email?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  id?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    id?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  password?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    password?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  phone_number?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    phone_number?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  roles?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    roles?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  username?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    username?: "asc" | "desc" | undefined;
 }

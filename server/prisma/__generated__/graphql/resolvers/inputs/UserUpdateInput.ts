@@ -5,28 +5,28 @@ import { DecimalJSScalar } from "../../scalars";
 
 @TypeGraphQL.InputType("UserUpdateInput", {})
 export class UserUpdateInput {
-  @TypeGraphQL.Field((_type) => String, {
-    nullable: true,
-  })
-  email?: string | undefined;
+    @TypeGraphQL.Field(_type => String, {
+            nullable: true
+        })
+    email?: string | undefined;
 
-  @TypeGraphQL.Field((_type) => String, {
-    nullable: true,
-  })
-  password?: string | undefined;
+    @TypeGraphQL.Field(_type => String, {
+            nullable: true
+        })
+    password?: string | undefined;
 
-  @TypeGraphQL.Field((_type) => TypeGraphQL.Int, {
-    nullable: true,
-  })
-  phone_number?: number | undefined;
+    @TypeGraphQL.Field(_type => TypeGraphQL.Int, {
+            nullable: true
+        })
+    phone_number?: number | undefined;
 
-  @TypeGraphQL.Field((_type) => String, {
-    nullable: true,
-  })
-  roles?: string | undefined;
+    @TypeGraphQL.Field(_type => String, {
+            nullable: true
+        })
+    roles?: string | undefined;
 
-  @TypeGraphQL.Field((_type) => String, {
-    nullable: true,
-  })
-  username?: string | undefined;
+    @TypeGraphQL.Field(_type => String, {
+            nullable: true
+        })
+    username?: string | undefined;
 }

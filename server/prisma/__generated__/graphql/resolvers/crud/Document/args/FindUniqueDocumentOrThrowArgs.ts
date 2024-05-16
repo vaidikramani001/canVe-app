@@ -4,8 +4,8 @@ import { DocumentWhereUniqueInput } from "../../../inputs/DocumentWhereUniqueInp
 
 @TypeGraphQL.ArgsType()
 export class FindUniqueDocumentOrThrowArgs {
-  @TypeGraphQL.Field((_type) => DocumentWhereUniqueInput, {
-    nullable: false,
-  })
-  where!: DocumentWhereUniqueInput;
+    @TypeGraphQL.Field(_type => DocumentWhereUniqueInput, {
+            nullable: false
+        })
+    where!: DocumentWhereUniqueInput;
 }

@@ -11,58 +11,58 @@ import { StringNullableWithAggregatesFilter } from "../inputs/StringNullableWith
 
 @TypeGraphQL.InputType("DocumentScalarWhereWithAggregatesInput", {})
 export class DocumentScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field((_type) => [DocumentScalarWhereWithAggregatesInput], {
-    nullable: true,
-  })
-  AND?: DocumentScalarWhereWithAggregatesInput[] | undefined;
+    @TypeGraphQL.Field(_type => [DocumentScalarWhereWithAggregatesInput], {
+            nullable: true
+        })
+    AND?: DocumentScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field((_type) => [DocumentScalarWhereWithAggregatesInput], {
-    nullable: true,
-  })
-  OR?: DocumentScalarWhereWithAggregatesInput[] | undefined;
+    @TypeGraphQL.Field(_type => [DocumentScalarWhereWithAggregatesInput], {
+            nullable: true
+        })
+    OR?: DocumentScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field((_type) => [DocumentScalarWhereWithAggregatesInput], {
-    nullable: true,
-  })
-  NOT?: DocumentScalarWhereWithAggregatesInput[] | undefined;
+    @TypeGraphQL.Field(_type => [DocumentScalarWhereWithAggregatesInput], {
+            nullable: true
+        })
+    NOT?: DocumentScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
-    nullable: true,
-  })
-  doc_type?: StringNullableWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+            nullable: true
+        })
+    doc_type?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => IntWithAggregatesFilter, {
-    nullable: true,
-  })
-  id?: IntWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => IntWithAggregatesFilter, {
+            nullable: true
+        })
+    id?: IntWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
-    nullable: true,
-  })
-  doc_number?: StringNullableWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+            nullable: true
+        })
+    doc_number?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => Enumdocument_doc_statusWithAggregatesFilter, {
-    nullable: true,
-  })
-  doc_status?: Enumdocument_doc_statusWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => Enumdocument_doc_statusWithAggregatesFilter, {
+            nullable: true
+        })
+    doc_status?: Enumdocument_doc_statusWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => IntNullableWithAggregatesFilter, {
-    nullable: true,
-  })
-  userId?: IntNullableWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => IntNullableWithAggregatesFilter, {
+            nullable: true
+        })
+    userId?: IntNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
-    nullable: true,
-  })
-  doc_url?: StringNullableWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+            nullable: true
+        })
+    doc_url?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => Enumdepartment_listWithAggregatesFilter, {
-    nullable: true,
-  })
-  department?: Enumdepartment_listWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => Enumdepartment_listWithAggregatesFilter, {
+            nullable: true
+        })
+    department?: Enumdepartment_listWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => BoolWithAggregatesFilter, {
-    nullable: true,
-  })
-  bookmarked?: BoolWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => BoolWithAggregatesFilter, {
+            nullable: true
+        })
+    bookmarked?: BoolWithAggregatesFilter | undefined;
 }

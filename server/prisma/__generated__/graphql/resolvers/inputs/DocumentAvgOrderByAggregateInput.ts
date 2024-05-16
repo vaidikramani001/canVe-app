@@ -6,13 +6,13 @@ import { SortOrder } from "../../enums/SortOrder";
 
 @TypeGraphQL.InputType("DocumentAvgOrderByAggregateInput", {})
 export class DocumentAvgOrderByAggregateInput {
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  id?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    id?: "asc" | "desc" | undefined;
 
-  @TypeGraphQL.Field((_type) => SortOrder, {
-    nullable: true,
-  })
-  userId?: "asc" | "desc" | undefined;
+    @TypeGraphQL.Field(_type => SortOrder, {
+            nullable: true
+        })
+    userId?: "asc" | "desc" | undefined;
 }

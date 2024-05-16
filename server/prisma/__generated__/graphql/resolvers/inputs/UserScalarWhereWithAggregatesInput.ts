@@ -9,48 +9,48 @@ import { StringWithAggregatesFilter } from "../inputs/StringWithAggregatesFilter
 
 @TypeGraphQL.InputType("UserScalarWhereWithAggregatesInput", {})
 export class UserScalarWhereWithAggregatesInput {
-  @TypeGraphQL.Field((_type) => [UserScalarWhereWithAggregatesInput], {
-    nullable: true,
-  })
-  AND?: UserScalarWhereWithAggregatesInput[] | undefined;
+    @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+            nullable: true
+        })
+    AND?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field((_type) => [UserScalarWhereWithAggregatesInput], {
-    nullable: true,
-  })
-  OR?: UserScalarWhereWithAggregatesInput[] | undefined;
+    @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+            nullable: true
+        })
+    OR?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field((_type) => [UserScalarWhereWithAggregatesInput], {
-    nullable: true,
-  })
-  NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
+    @TypeGraphQL.Field(_type => [UserScalarWhereWithAggregatesInput], {
+            nullable: true
+        })
+    NOT?: UserScalarWhereWithAggregatesInput[] | undefined;
 
-  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
-    nullable: true,
-  })
-  email?: StringNullableWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+            nullable: true
+        })
+    email?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => IntWithAggregatesFilter, {
-    nullable: true,
-  })
-  id?: IntWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => IntWithAggregatesFilter, {
+            nullable: true
+        })
+    id?: IntWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => StringNullableWithAggregatesFilter, {
-    nullable: true,
-  })
-  password?: StringNullableWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => StringNullableWithAggregatesFilter, {
+            nullable: true
+        })
+    password?: StringNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => IntNullableWithAggregatesFilter, {
-    nullable: true,
-  })
-  phone_number?: IntNullableWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => IntNullableWithAggregatesFilter, {
+            nullable: true
+        })
+    phone_number?: IntNullableWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => StringWithAggregatesFilter, {
-    nullable: true,
-  })
-  roles?: StringWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
+            nullable: true
+        })
+    roles?: StringWithAggregatesFilter | undefined;
 
-  @TypeGraphQL.Field((_type) => StringWithAggregatesFilter, {
-    nullable: true,
-  })
-  username?: StringWithAggregatesFilter | undefined;
+    @TypeGraphQL.Field(_type => StringWithAggregatesFilter, {
+            nullable: true
+        })
+    username?: StringWithAggregatesFilter | undefined;
 }

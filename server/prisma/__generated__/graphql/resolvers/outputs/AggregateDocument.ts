@@ -9,31 +9,31 @@ import { DocumentMinAggregate } from "../outputs/DocumentMinAggregate";
 import { DocumentSumAggregate } from "../outputs/DocumentSumAggregate";
 
 @TypeGraphQL.ObjectType("AggregateDocument", {
-  simpleResolvers: true,
-})
+        simpleResolvers: true
+    })
 export class AggregateDocument {
-  @TypeGraphQL.Field((_type) => DocumentCountAggregate, {
-    nullable: true,
-  })
-  _count!: DocumentCountAggregate | null;
+    @TypeGraphQL.Field(_type => DocumentCountAggregate, {
+            nullable: true
+        })
+    _count!: DocumentCountAggregate | null;
 
-  @TypeGraphQL.Field((_type) => DocumentAvgAggregate, {
-    nullable: true,
-  })
-  _avg!: DocumentAvgAggregate | null;
+    @TypeGraphQL.Field(_type => DocumentAvgAggregate, {
+            nullable: true
+        })
+    _avg!: DocumentAvgAggregate | null;
 
-  @TypeGraphQL.Field((_type) => DocumentSumAggregate, {
-    nullable: true,
-  })
-  _sum!: DocumentSumAggregate | null;
+    @TypeGraphQL.Field(_type => DocumentSumAggregate, {
+            nullable: true
+        })
+    _sum!: DocumentSumAggregate | null;
 
-  @TypeGraphQL.Field((_type) => DocumentMinAggregate, {
-    nullable: true,
-  })
-  _min!: DocumentMinAggregate | null;
+    @TypeGraphQL.Field(_type => DocumentMinAggregate, {
+            nullable: true
+        })
+    _min!: DocumentMinAggregate | null;
 
-  @TypeGraphQL.Field((_type) => DocumentMaxAggregate, {
-    nullable: true,
-  })
-  _max!: DocumentMaxAggregate | null;
+    @TypeGraphQL.Field(_type => DocumentMaxAggregate, {
+            nullable: true
+        })
+    _max!: DocumentMaxAggregate | null;
 }
