@@ -100,6 +100,7 @@ const main = async () => {
       origin: [
         "http://localhost:3000",
         "http://localhost:3001",
+        "https://can-ve-web.vercel.app"
       ],
       credentials: true,
     })
