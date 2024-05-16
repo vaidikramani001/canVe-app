@@ -1,5 +1,3 @@
-//@ts-nocheck
-//@ts-ignore
 import { ApolloError } from 'apollo-server-express';
 
 export class DuplicateEntryError extends ApolloError {
