@@ -18,14 +18,12 @@
 import { Request, Response } from "express";
 import { SessionData } from "express-session";
 import { PrismaClient } from '@prisma/client';
-import { AccessTokenData } from "./services";
 
 export type MyContext = {
     prisma: PrismaClient;
     req: Request & { session: SessionData & { userId: number } };
     res: Response;
     token: string;
-    user: AccessTokenData | null;
 };
 
 export type Role = "ADMIN" | "USER"; 
