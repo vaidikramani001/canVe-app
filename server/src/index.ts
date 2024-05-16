@@ -177,8 +177,9 @@ const main = async () => {
   if (!__prod__) {
     app.use(express.static(path.join(process.cwd())));
   }
+  const port = 4000
   /** Start server */
-  app.listen(4000, () => {
+  app.listen(`${port}`, () => {
     console.log("Server started on localhost:4000 ");
   });
 };
