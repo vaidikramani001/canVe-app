@@ -172,7 +172,7 @@ export class AuthResolver {
         ],
       };
     }
-    if(user){
+    if (user) {
       const accessToken = TokenService.generateAccessToken({
         username: user.email,
         userId: user.id,
@@ -187,7 +187,7 @@ export class AuthResolver {
   }
 
 
-  
+
   @Mutation(() => PasswordResetResponse)
   async resetPassword(
     @Arg("data") data: PasswordResetInput,
@@ -195,11 +195,11 @@ export class AuthResolver {
   ): Promise<PasswordResetResponse> {
     try {
       const user = await prisma.user.findUnique({
-        where: { email : data.email  },
+        where: { email: data.email },
       });
       if (!user) {
         return {
-          errors: [{ message: "User not found." }],
+          errors: [{ message: "User not found." } as any],
         };
       }
 
@@ -209,7 +209,7 @@ export class AuthResolver {
       );
       if (!passwordMatch) {
         return {
-          errors: [{ field: "currentPassword", message: "Incorrect password." }],
+          errors: [{ field: "currentPassword", message: "Incorrect password." } as any],
         };
       }
 
@@ -240,12 +240,12 @@ export class AuthResolver {
     } catch (error) {
       console.error("Error resetting password:", error);
       return {
-        errors: [{ message: "Failed to reset password." }],
+        errors: [{ message: "Failed to reset password." } as any],
       };
     }
   }
 
 
 }
-  
+
 

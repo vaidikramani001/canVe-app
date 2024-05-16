@@ -30,10 +30,7 @@ export const authChecker: AuthChecker<MyContext> = async ({ context: { req } }, 
   //   return true;
   // }
   const userRolesArray = user.roles.split(',');
-  if (userRolesArray.some(role => roles.includes(role))) {
-    // grant access if the roles overlap
-    return true;
-  }
+
 
   // no roles matched, restrict access
   return false;

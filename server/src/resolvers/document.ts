@@ -54,7 +54,7 @@ class Document {
   @Field(() => String, { nullable: true })
   doc_status?: string | null;
 
-  @Field({nullable:true})
+  @Field({ nullable: true })
   doc_url?: string;
 
   @Field()
@@ -76,16 +76,16 @@ export class DocumentResolver {
   @Mutation(() => DocumentResponse)
   async createDocument(
     @Arg("data") data: CreateDocumentInput,
-    @Ctx() {}: MyContext
+    @Ctx() { }: MyContext
   ): Promise<DocumentResponse> {
     let createdDocument
     try {
-     createdDocument = await prisma.document.create({
+      createdDocument = await prisma.document.create({
         data: {
           doc_type: data.doc_type,
           doc_number: data.doc_number,
           doc_status: "ACTIVE",
-          userId : data.userId,
+          userId: data.userId,
         },
       });
       // Construct a proper DocumentResponse object with the created document
@@ -94,12 +94,12 @@ export class DocumentResolver {
       console.error("Error creating document:", error);
       return { errors: [{ field: "general", message: "Failed to create document." }] };
     }
-    return { document: createdDocument };
+    return { document: createdDocument as Document };
   }
-  
+
 
   @Query(() => [Document], { nullable: true })
-  async documents(@Ctx() {}: MyContext): Promise<Document[] | null> {
+  async documents(@Ctx() { }: MyContext): Promise<Document[] | null> {
     let documents
     try {
       documents = await prisma.document.findMany();
@@ -107,14 +107,14 @@ export class DocumentResolver {
       console.error("Error retrieving documents:", error);
       return null;
     }
-    console.log(documents,"doc")
-    return documents;
+    console.log(documents, "doc")
+    return documents as Document[];
   }
 
   @Query(() => [Document], { nullable: true })
   async documentsByUserId(
     @Arg("data") data: FindDocumentByUserInput,
-    @Ctx() {}: MyContext
+    @Ctx() { }: MyContext
   ): Promise<Document[] | null> {
     try {
       const documents = await prisma.document.findMany({
@@ -122,18 +122,18 @@ export class DocumentResolver {
           userId: data.userId,
         },
       });
-      return documents;
+      return documents as Document[];
     } catch (error) {
       console.error("Error retrieving documents by user ID:", error);
       return null;
     }
   }
-  
+
   @Mutation(() => String)
   async verifyDocument(
     @Arg("data") data: string,
     @Arg("userId") userId: number, // New argument for the userId to update
-    @Ctx() {}: MyContext
+    @Ctx() { }: MyContext
   ): Promise<string> {
     try {
       const document = await prisma.document.findFirst({
@@ -141,7 +141,7 @@ export class DocumentResolver {
           doc_number: data,
         },
       });
-  
+
       if (document) {
         // If the document is found, update the userId
         const updatedDocument = await prisma.document.update({
@@ -152,7 +152,7 @@ export class DocumentResolver {
             userId: userId,
           },
         });
-        
+
         if (updatedDocument) {
           return "Document is verified and userId updated successfully";
         } else {
@@ -172,7 +172,7 @@ export class DocumentResolver {
   @Mutation(() => Document, { nullable: true })
   async toggleBookmark(
     @Arg("documentId") documentId: number,
-    @Ctx() {}: MyContext
+    @Ctx() { }: MyContext
   ): Promise<Document | null> {
     try {
       // Find the document by ID
@@ -197,11 +197,11 @@ export class DocumentResolver {
         },
       });
 
-      return updatedDocument;
+      return updatedDocument as any;
     } catch (error) {
       console.error("Error toggling bookmark:", error);
       return null;
     }
   }
-  
+
 }
