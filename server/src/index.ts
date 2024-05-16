@@ -7,7 +7,6 @@ import {
   SESSION_SECRET,
   __prod__,
 } from "./constants";
-import mikroConfig from "./mikro-orm.config";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
@@ -148,8 +147,8 @@ const main = async () => {
       authChecker,
     }),
     introspection: true,
-    context: ({ req, res }) => ({ req, res }), // prisma: orm.prisma,
-    formatError: (error) => {
+    context: ({ req, res }: any) => ({ req, res }), // prisma: orm.prisma,
+    formatError: (error: any) => {
       if (error.originalError instanceof DuplicateEntryError) {
         return {
           message: error.message,
