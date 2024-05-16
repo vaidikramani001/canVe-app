@@ -64,7 +64,8 @@ export class UserResolver {
 
   @Query(() => User)
   async user(
-    @Arg("data") data: UpdateUserInput, 
+    @Arg("data") data: UpdateUserInput,
+    @Ctx() { em }: MyContext
   ): Promise<UpdateUserRes> {
     if (!data.email) {
       return {
