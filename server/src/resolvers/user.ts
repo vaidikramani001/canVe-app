@@ -38,7 +38,7 @@ class UpdateUserRes extends ResponseError {
 
   @Field(() => User, { nullable: true })
   user?: User;
-  
+
 }
 
 
@@ -46,7 +46,7 @@ class UpdateUserRes extends ResponseError {
 export class UserResolver {
   @Authorized<Role>(["ADMIN"])
   @Query(() => [User], { nullable: true })
-  async users(@Ctx() {}: MyContext): Promise<User[] | null> {
+  async users(@Ctx() { }: MyContext): Promise<User[] | null> {
     const users = await prisma.user.findMany();
     // console.log(users , "users")
     return users;
@@ -87,7 +87,7 @@ export class UserResolver {
   @Mutation(() => UpdateUserRes)
   async updateUsers(
     @Arg("data") data: UpdateUserInput,
-    @Ctx() {}: MyContext
+    @Ctx() { }: MyContext
   ): Promise<UpdateUserRes> {
     try {
       const user = await prisma.user.findUnique({

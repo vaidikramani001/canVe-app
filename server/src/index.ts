@@ -41,34 +41,34 @@ const main = async () => {
   const app = express();
 
   // Configure Multer for file upload
-  const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      const folderName = req.headers["x-folder-name"] as string;
+  // const storage = multer.diskStorage({
+  //   destination: function (req, file, cb) {
+  //     const folderName = req.headers["x-folder-name"] as string;
 
-      // Check if folderName is provided
-      if (!folderName) {
-        return cb(new Error("Folder name not provided in headers."), "error");
-      }
+  //     // Check if folderName is provided
+  //     if (!folderName) {
+  //       return cb(new Error("Folder name not provided in headers."), "error");
+  //     }
 
-      // Construct the destination path
-      const destinationPath = `public/uploads/${folderName}`;
+  //     // Construct the destination path
+  //     const destinationPath = `public/uploads/${folderName}`;
 
-      // Create the directory if it doesn't exist
-      fs.mkdir(destinationPath, { recursive: true }, function (err) {
-        if (err) {
-          // Handle error
-          return cb(err, destinationPath); // Pass destinationPath even if error occurs
-        }
-        cb(null, destinationPath);
-      });
-    },
-    filename: function (req, file, cb) {
-      const fileId = uuidv4(); // Generate unique file name
-      cb(null, file.originalname); // Save file with UUID as filename
-    },
-  });
+  //     // Create the directory if it doesn't exist
+  //     fs.mkdir(destinationPath, { recursive: true }, function (err) {
+  //       if (err) {
+  //         // Handle error
+  //         return cb(err, destinationPath); // Pass destinationPath even if error occurs
+  //       }
+  //       cb(null, destinationPath);
+  //     });
+  //   },
+  //   filename: function (req, file, cb) {
+  //     const fileId = uuidv4(); // Generate unique file name
+  //     cb(null, file.originalname); // Save file with UUID as filename
+  //   },
+  // });
 
-  const upload = multer({ storage: storage });
+  // const upload = multer({ storage: storage });
 
 
   /** Configure mySQL store for session */
@@ -151,7 +151,7 @@ const main = async () => {
    * Trust proxies and make secure false for http request
    */
   app.set("trust proxy", 1);
-  app.use((req, res, next) => {
+  app.use((req, res, next): any => {
     if (req.headers["x-forwarded-proto"] !== "https") {
       req.session.cookie.secure = false;
     }
