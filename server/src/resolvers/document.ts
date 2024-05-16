@@ -1,4 +1,3 @@
-import { PrismaClient } from "@prisma/client";
 import { MyContext } from "../types";
 import {
   Arg,
@@ -11,6 +10,9 @@ import {
   Query,
   Resolver,
 } from "type-graphql";
+import { ResponseError } from "./auth/types";
+import { PrismaClient } from '@prisma/client';
+import { User } from "~/prisma/__generated__/graphql";
 
 const prisma = new PrismaClient();
 
@@ -52,7 +54,7 @@ class Document {
   @Field(() => String, { nullable: true })
   doc_status?: string | null;
 
-  @Field({ nullable: true })
+  @Field({nullable:true})
   doc_url?: string;
 
   @Field()
@@ -61,54 +63,43 @@ class Document {
   @Field()
   bookmarked: boolean;
 }
-@ObjectType()
-class ResponseError {
-  @Field()
-  field: string;
-
-  @Field()
-  message: string;
-}
 
 @ObjectType()
-class DocumentResponse {
+class DocumentResponse extends ResponseError {
   @Field(() => Document, { nullable: true })
   document?: Document;
-
-  @Field(() => [ResponseError], { nullable: true })
-  errors?: ResponseError[];
 }
+
 @Resolver()
 export class DocumentResolver {
 
   @Mutation(() => DocumentResponse)
   async createDocument(
     @Arg("data") data: CreateDocumentInput,
-    @Ctx() { }: MyContext
+    @Ctx() {}: MyContext
   ): Promise<DocumentResponse> {
     let createdDocument
     try {
-      createdDocument = await prisma.document.create({
+     createdDocument = await prisma.document.create({
         data: {
           doc_type: data.doc_type,
           doc_number: data.doc_number,
           doc_status: "ACTIVE",
-          userId: data.userId,
+          userId : data.userId,
         },
       });
       // Construct a proper DocumentResponse object with the created document
       // return { document: createdDocument };
     } catch (error) {
       console.error("Error creating document:", error);
-      return { errors: [{ field: "general", message: "Failed to create document." }] }
+      return { errors: [{ field: "general", message: "Failed to create document." }] };
     }
-    return { document: createdDocument as Document };
-
+    return { document: createdDocument };
   }
-
+  
 
   @Query(() => [Document], { nullable: true })
-  async documents(@Ctx() { }: MyContext): Promise<Document[] | null> {
+  async documents(@Ctx() {}: MyContext): Promise<Document[] | null> {
     let documents
     try {
       documents = await prisma.document.findMany();
@@ -116,13 +107,14 @@ export class DocumentResolver {
       console.error("Error retrieving documents:", error);
       return null;
     }
+    console.log(documents,"doc")
     return documents;
   }
 
   @Query(() => [Document], { nullable: true })
   async documentsByUserId(
     @Arg("data") data: FindDocumentByUserInput,
-    @Ctx() { }: MyContext
+    @Ctx() {}: MyContext
   ): Promise<Document[] | null> {
     try {
       const documents = await prisma.document.findMany({
@@ -136,12 +128,12 @@ export class DocumentResolver {
       return null;
     }
   }
-
+  
   @Mutation(() => String)
   async verifyDocument(
     @Arg("data") data: string,
     @Arg("userId") userId: number, // New argument for the userId to update
-    @Ctx() { }: MyContext
+    @Ctx() {}: MyContext
   ): Promise<string> {
     try {
       const document = await prisma.document.findFirst({
@@ -149,7 +141,7 @@ export class DocumentResolver {
           doc_number: data,
         },
       });
-
+  
       if (document) {
         // If the document is found, update the userId
         const updatedDocument = await prisma.document.update({
@@ -160,7 +152,7 @@ export class DocumentResolver {
             userId: userId,
           },
         });
-
+        
         if (updatedDocument) {
           return "Document is verified and userId updated successfully";
         } else {
@@ -180,7 +172,7 @@ export class DocumentResolver {
   @Mutation(() => Document, { nullable: true })
   async toggleBookmark(
     @Arg("documentId") documentId: number,
-    @Ctx() { }: MyContext
+    @Ctx() {}: MyContext
   ): Promise<Document | null> {
     try {
       // Find the document by ID
@@ -205,11 +197,11 @@ export class DocumentResolver {
         },
       });
 
-      return updatedDocument as Document;
+      return updatedDocument;
     } catch (error) {
       console.error("Error toggling bookmark:", error);
       return null;
     }
   }
-
+  
 }
