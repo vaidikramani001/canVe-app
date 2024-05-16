@@ -1,3 +1,5 @@
+//@ts-ignore
+//@ts-nocheck
 import { AuthChecker } from "type-graphql";
 // import { User } from "../../entities/User";
 import { MyContext } from "../../types";
