@@ -70,24 +70,6 @@ const main = async () => {
 
   const upload = multer({ storage: storage });
 
-  // Serve static files
-  app.use(express.static("public"));
-
-  // Add a new endpoint for file upload
-  app.post("/upload", upload.single("file"), (req, res) => {
-    const file = req.file;
-    const folderName = req.headers["x-folder-name"];
-
-    if (!file) {
-      return res.status(400).send("No file uploaded.");
-    }
-
-    const fileUrl = `${HOST}public/uploads/${folderName}/${file.originalname}`;
-
-    // Save the file URL in your database
-    res.status(200).json({ url: fileUrl });
-  });
-
   /** Configure mySQL store for session */
   const MySQLSession = connectMySQL(session);
 
